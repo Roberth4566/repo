@@ -60,6 +60,7 @@ ul {
     background: transparent;
     border: none;
     cursor: pointer;
+    z-index: 250;
 }
 
 .menu-toggle div {
@@ -95,34 +96,6 @@ ul {
 
 .nav-link:hover {
     background-color: #ddd;
-}
-
-/* MÓVIL */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
-
-    .nav {
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: #f5f5f5;
-        width: 200px;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        z-index: 100;
-    }
-
-    .nav.active {
-        transform: translateX(0);
-    }
-
-    #toggle-dark {
-        display: block !important;
-    }
 }
 
 /* =========================================
@@ -329,11 +302,24 @@ ul {
 ========================================= */
 body.dark-mode {
     background-color: #121212;
-    color: #eee;
+    color: #f0f0f0;
 }
 
 body.dark-mode .header {
-    background-color: #1f1f1f;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+body.dark-mode .header-title {
+    color: #f0f0f0;
+}
+
+body.dark-mode .nav {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .nav-link {
+    color: #f0f0f0;
 }
 
 body.dark-mode .nav-link:hover {
@@ -360,59 +346,6 @@ body.dark-mode .btn:hover {
     background-color: #555;
 }
 
-body.dark-mode .curso-item, body.dark-mode .tarea-item {
-    background-color: #1f1f1f;
-    color: #eee;
-}
-
-body.dark-mode .evento {
-    color: #ccc;
-}
-
-body.dark-mode .footer {
-    background-color: #1f1f1f;
-    color: #ccc;
-}
-
-
-/* =========================================
-   MODO OSCURO
-========================================= */
-body.dark-mode {
-    background-color: #121212;
-    color: #f0f0f0;
-}
-
-/* Encabezado */
-body.dark-mode .header {
-    background-color: #1e1e1e;
-    color: #f0f0f0;
-}
-
-body.dark-mode .header-title {
-    color: #f0f0f0;
-}
-
-/* Navegación */
-body.dark-mode .nav {
-    background-color: #1e1e1e;
-}
-
-body.dark-mode .nav-link {
-    color: #f0f0f0;
-}
-
-body.dark-mode .nav-link:hover {
-    background-color: #333;
-}
-
-/* Botón modo oscuro */
-body.dark-mode #toggle-dark {
-    background-color: #f0f0f0;
-    color: #121212;
-}
-
-/* Tarjetas */
 body.dark-mode .curso-item,
 body.dark-mode .tarea-item {
     background-color: #1e1e1e;
@@ -420,13 +353,11 @@ body.dark-mode .tarea-item {
     box-shadow: 0 2px 5px rgba(255,255,255,0.1);
 }
 
-/* Footer */
 body.dark-mode .footer {
     background-color: #1e1e1e;
     color: #f0f0f0;
 }
 
-/* Calendario */
 body.dark-mode .calendario-wrapper {
     background-color: #1e1e1e;
 }
@@ -454,38 +385,25 @@ body.dark-mode .evento {
     color: #fff;
 }
 
-/* Botón toggle siempre visible en móvil */
-@media (max-width: 768px) {
-    #toggle-dark {
-        display: block !important;
-    }
-}
-
 /* =========================================
    MÓVIL – MENÚ, MODO OSCURO Y CALENDARIO
 ========================================= */
 @media (max-width: 768px) {
-    /* =======================
-       MENÚ HAMBURGUESA FIJO ARRIBA IZQUIERDA
-    ======================= */
+    /* Menú hamburguesa fijo arriba izquierda */
     .menu-toggle {
         position: fixed;
         top: 20px;
         left: 20px;
         width: 30px;
         height: 25px;
-        flex-direction: column;
-        justify-content: space-between;
-        background: transparent;
-        border: none;
-        cursor: pointer;
+        display: flex;
         z-index: 250;
     }
 
     .nav {
         flex-direction: column;
         position: fixed;
-        top: 60px; /* justo debajo del botón */
+        top: 60px;
         left: 20px;
         background-color: #f5f5f5;
         width: 180px;
@@ -507,9 +425,7 @@ body.dark-mode .evento {
         border-bottom: 1px solid #ddd;
     }
 
-    /* =======================
-       BOTÓN MODO OSCURO FIJO ABAJO DERECHA
-    ======================= */
+    /* Botón modo oscuro fijo abajo derecha */
     #toggle-dark {
         position: fixed;
         bottom: 20px;
@@ -518,24 +434,16 @@ body.dark-mode .evento {
         z-index: 300;
     }
 
-    /* =======================
-       CALENDARIO ADAPTADO MÓVIL
-    ======================= */
+    /* Calendario adaptado a móvil */
     .calendario-wrapper {
         overflow-x: auto;
-        margin-top: 1rem;
-    }
-
-    .calendario {
-        width: 100%;
-        table-layout: fixed;
     }
 
     .calendario th, .calendario td {
-        font-size: 0.8rem; /* más compacto en móvil */
+        font-size: 0.8rem;
         padding: 0.3rem;
         height: 60px;
-        word-wrap: break-word; /* evita que el texto se salga */
+        word-wrap: break-word;
     }
 
     .calendario td div {
@@ -551,10 +459,11 @@ body.dark-mode .evento {
     .evento {
         font-size: 0.65rem;
         line-height: 1rem;
-        white-space: normal; /* se ajusta a la celda */
+        white-space: normal;
         display: block;
         text-align: left;
     }
 }
+
 
 
