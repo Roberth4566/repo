@@ -465,6 +465,61 @@ body.dark-mode .evento {
     }
 }
 
+/* =========================================
+   FIXES DEFINITIVOS PARA MÓVIL
+========================================= */
+@media (max-width: 768px) {
+
+    /* 1️⃣ Header fijo sin tapar contenido */
+    .header {
+        position: sticky;
+        top: 0;
+        z-index: 300;
+    }
+
+    .main {
+        padding-top: 1rem;
+    }
+
+    /* 2️⃣ Calendario: forzar scroll horizontal real */
+    .calendario {
+        width: max-content;
+        min-width: 700px;
+        table-layout: auto;
+    }
+
+    .calendario-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* 3️⃣ Navegación de meses en una sola línea */
+    .calendario-nav {
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+    }
+
+    .cal-center {
+        white-space: nowrap;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .cal-prev,
+    .cal-next {
+        white-space: nowrap;
+        font-size: 1rem;
+    }
+}
+
+/* =========================================
+   FIX MODO OSCURO – EVENTOS SIN CUADROS
+========================================= */
+body.dark-mode .evento {
+    background-color: transparent !important;
+    color: #f0f0f0;
+}
+
 
 
 
