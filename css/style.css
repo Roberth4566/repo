@@ -126,12 +126,16 @@ ul {
     background-color: #333;
     color: #fff;
     border: none;
-    padding: 0.6rem 1rem;
+    padding: 0.6rem;
     border-radius: 50%;
     cursor: pointer;
     font-size: 1.3rem;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     transition: background 0.3s, transform 0.2s;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #toggle-dark:hover {
@@ -244,34 +248,38 @@ ul {
 
 .calendario th, .calendario td {
     border: 1px solid #ccc;
-    text-align: center;
-    padding: 0.5rem;
-    width: 14.28%; /* 7 columnas */
-    height: 70px; /* igual altura */
+    text-align: left; /* números arriba izquierda */
+    vertical-align: top;
+    padding: 0.3rem;
+    width: 14.28%;
+    height: 70px;
+    box-sizing: border-box;
 }
 
 .calendario td div {
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start; /* números esquina superior izquierda */
+    padding: 0.2rem;
+    word-wrap: break-word; /* texto dentro de la casilla */
+    font-size: 0.8rem;
 }
 
 .eventos-container {
-    margin-top: 0.1rem; /* más pequeño */
+    margin-top: 0.1rem;
     width: 100%;
 }
 
 .evento {
-    background-color: transparent; /* Elimina fondo gris */
-    color: #000; /* texto negro */
-    padding: 0; /* sin padding extra */
-    border-radius: 0; /* sin esquinas redondeadas */
+    background-color: transparent; /* elimina fondo gris */
+    color: #000;
+    padding: 0;
+    border-radius: 0;
     font-size: 0.75rem;
     display: block;
-    text-align: center;
+    text-align: left; /* alineado con número */
 }
 
 /* CALENDARIO NAVEGACIÓN */
@@ -301,7 +309,7 @@ ul {
 ========================================= */
 .footer {
     background-color: transparent; /* elimina fondo gris */
-    color: #000; /* mantiene texto negro */
+    color: #000;
     padding: 1rem 2rem;
     text-align: center;
     margin-top: auto; /* Siempre al final */
@@ -336,11 +344,11 @@ body.dark-mode .nav-link:hover {
 body.dark-mode .curso-item, body.dark-mode .tarea-item, 
 body.dark-mode .evento {
     background-color: #1e1e1e;
-    color: #fff; /* Si quieres negro, reemplaza #fff por #000 */
+    color: #fff;
 }
 
 body.dark-mode .footer {
-    background-color: transparent; /* footer modo oscuro sin color */
+    background-color: transparent;
 }
 
 /* =========================================
@@ -356,6 +364,8 @@ body, .nav-link, .curso-item, .tarea-item, .evento, #toggle-dark, .input, .btn {
 @media (max-width: 768px) {
     .calendario th, .calendario td {
         height: 60px;
+        font-size: 0.75rem; /* texto más pequeño en móvil */
+        padding: 0.2rem;
     }
     .main {
         padding: 1rem;
@@ -364,4 +374,13 @@ body, .nav-link, .curso-item, .tarea-item, .evento, #toggle-dark, .input, .btn {
         padding: 1.5rem;
         margin: 1rem;
     }
+    #toggle-dark {
+        bottom: 15px;
+        right: 15px;
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
 }
+
+
