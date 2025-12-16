@@ -466,59 +466,85 @@ body.dark-mode .evento {
 }
 
 /* =========================================
-   FIXES DEFINITIVOS PARA MÓVIL
+   FIX FINAL DEFINITIVO – NO BORRAR NADA ARRIBA
 ========================================= */
-@media (max-width: 768px) {
 
-    /* 1️⃣ Header fijo sin tapar contenido */
+/* ===== HEADER FIJO Y ESTABLE EN MÓVIL ===== */
+@media (max-width: 768px) {
     .header {
-        position: sticky;
+        position: sticky !important;
         top: 0;
-        z-index: 300;
+        z-index: 999;
     }
 
     .main {
-        padding-top: 1rem;
+        padding-top: 1.5rem;
+    }
+}
+
+/* ===== MENÚ MÓVIL ESTABLE ===== */
+@media (max-width: 768px) {
+    .nav {
+        pointer-events: none;
     }
 
-    /* 2️⃣ Calendario: forzar scroll horizontal real */
-    .calendario {
-        width: max-content;
-        min-width: 700px;
-        table-layout: auto;
+    .nav.active {
+        pointer-events: auto;
     }
+}
 
+/* ===== CALENDARIO: SCROLL REAL EN MÓVIL ===== */
+@media (max-width: 768px) {
     .calendario-wrapper {
-        overflow-x: auto;
+        overflow-x: auto !important;
         -webkit-overflow-scrolling: touch;
     }
 
-    /* 3️⃣ Navegación de meses en una sola línea */
+    .calendario {
+        width: max-content !important;
+        min-width: 700px !important;
+        table-layout: auto !important;
+    }
+
+    .calendario th,
+    .calendario td {
+        white-space: nowrap;
+    }
+
     .calendario-nav {
         flex-wrap: nowrap;
-        gap: 0.5rem;
+        justify-content: space-between;
     }
 
     .cal-center {
         white-space: nowrap;
         font-size: 0.9rem;
-        text-align: center;
-    }
-
-    .cal-prev,
-    .cal-next {
-        white-space: nowrap;
-        font-size: 1rem;
     }
 }
 
-/* =========================================
-   FIX MODO OSCURO – EVENTOS SIN CUADROS
-========================================= */
+/* ===== MODO OSCURO: QUITAR CUADROS GRISES ===== */
 body.dark-mode .evento {
     background-color: transparent !important;
-    color: #f0f0f0;
+    color: #f0f0f0 !important;
 }
+
+/* ===== Z-INDEX LIMPIO ===== */
+.header {
+    z-index: 900;
+}
+
+.menu-toggle {
+    z-index: 950;
+}
+
+.nav {
+    z-index: 940;
+}
+
+#toggle-dark {
+    z-index: 1000;
+}
+
 
 
 
