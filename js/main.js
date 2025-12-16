@@ -22,9 +22,18 @@ toggleDark.addEventListener('click', () => {
 const toggleMenu = document.getElementById('menu-toggle');
 const menu = document.getElementById('mobile-menu');
 
-toggleMenu.addEventListener('click', () => {
+toggleMenu.addEventListener('click', (e) => {
+    e.stopPropagation(); // evita que el clic se propague
     menu.classList.toggle('active'); // mostrar/ocultar menú
     toggleMenu.classList.toggle('active'); // animación botón
+});
+
+// Cerrar menú al hacer clic fuera
+document.addEventListener('click', (e) => {
+    if(menu.classList.contains('active') && !menu.contains(e.target) && !toggleMenu.contains(e.target)){
+        menu.classList.remove('active');
+        toggleMenu.classList.remove('active');
+    }
 });
 
 // ===== REDIRECCIÓN LOGIN =====
