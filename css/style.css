@@ -373,3 +373,90 @@ body.dark-mode .footer {
     background-color: #1f1f1f;
     color: #ccc;
 }
+
+
+/* =========================================
+   MODO OSCURO
+========================================= */
+body.dark-mode {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+/* Encabezado */
+body.dark-mode .header {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+body.dark-mode .header-title {
+    color: #f0f0f0;
+}
+
+/* Navegación */
+body.dark-mode .nav {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .nav-link {
+    color: #f0f0f0;
+}
+
+body.dark-mode .nav-link:hover {
+    background-color: #333;
+}
+
+/* Botón modo oscuro */
+body.dark-mode #toggle-dark {
+    background-color: #f0f0f0;
+    color: #121212;
+}
+
+/* Tarjetas */
+body.dark-mode .curso-item,
+body.dark-mode .tarea-item {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+}
+
+/* Footer */
+body.dark-mode .footer {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+/* Calendario */
+body.dark-mode .calendario-wrapper {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .calendario {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    border-color: #555;
+}
+
+body.dark-mode .calendario th {
+    background-color: #333;
+    color: #f0f0f0;
+    border-color: #555;
+}
+
+body.dark-mode .calendario td {
+    background-color: #222;
+    color: #f0f0f0;
+    border-color: #555;
+}
+
+body.dark-mode .evento {
+    background-color: #444;
+    color: #fff;
+}
+
+/* Botón toggle siempre visible en móvil */
+@media (max-width: 768px) {
+    #toggle-dark {
+        display: block !important;
+    }
+}
