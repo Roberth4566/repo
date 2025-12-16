@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard – Prototipo WCAG 2.2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ENCABEZADO SUPERIOR -->
+    <header class="header">
+        <h1 class="header-title">Prototipo Front-End – WCAG 2.2</h1>
+
+        <!-- BOTÓN HAMBURGUESA SOLO MÓVIL -->
+        <button id="menu-toggle" aria-label="Abrir menú" class="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+
+        <!-- NAVEGACIÓN -->
+        <nav class="nav" aria-label="Navegación principal" id="mobile-menu">
+            <a class="nav-link" href="index.html">Bienvenida</a>
+            <a class="nav-link" href="login.html">Inicio de sesión</a>
+            <a class="nav-link" href="dashboard.html">Recordatorios</a>
+            <a class="nav-link" href="mis-cursos.html">Mis cursos</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <!-- DASHBOARD -->
+    <main class="main">
+        <!-- TAREAS -->
+        <section class="section-tareas" aria-labelledby="titulo-tareas">
+            <h2 id="titulo-tareas" class="section-title">Tareas pendientes</h2>
+
+            <ul class="tareas-list">
+                <li class="tarea-item">
+                    <strong>Entregar informe</strong>
+                    <ul class="sub-list">
+                        <li>Materia: Español</li>
+                        <li>Vencimiento: 10 diciembre 2025</li>
+                        <li>Estado: 🔴 Vencimiento</li>
+                    </ul>
+                </li>
+
+                <li class="tarea-item">
+                    <strong>Subir Actividad 11</strong>
+                    <ul class="sub-list">
+                        <li>Materia: Matemáticas</li>
+                        <li>Vencimiento: 15 diciembre 2025</li>
+                        <li>Estado: 🔴 Vencimiento</li>
+                    </ul>
+                </li>
+
+                <li class="tarea-item">
+                    <strong>Maqueta del proyecto</strong>
+                    <ul class="sub-list">
+                        <li>Materia: Tecnología</li>
+                        <li>Vencimiento: 20 diciembre 2025</li>
+                        <li>Estado: 🔴 Vencimiento</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <!-- CALENDARIO -->
+        <section class="section-calendario" aria-labelledby="calendario-title">
+            <h2 id="calendario-title" class="section-title">Calendario de diciembre 2025</h2>
+
+            <!-- NUEVA NAVEGACIÓN DEL CALENDARIO -->
+            <div class="calendario-nav">
+                <a class="cal-prev" href="#">← noviembre</a>
+                <strong class="cal-center">diciembre 2025</strong>
+                <a class="cal-next" href="#">enero →</a>
+            </div>
+
+            <div class="calendario-wrapper">
+                <table class="calendario" border="1" aria-label="Calendario con tareas y fechas de vencimiento">
+                    <thead>
+                        <tr>
+                            <th>Lun</th>
+                            <th>Mar</th>
+                            <th>Mié</th>
+                            <th>Jue</th>
+                            <th>Vie</th>
+                            <th>Sáb</th>
+                            <th>Dom</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- filas de días con divs para eventos, sin subrayado ni color -->
+                        <tr>
+                            <td><div>1</div></td>
+                            <td><div>2</div></td>
+                            <td><div>3</div></td>
+                            <td>
+                                <div>4</div>
+                                <div class="eventos-container">
+                                    <div class="evento">🔸 Vencimiento informe</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div>5</div>
+                                <div class="eventos-container">
+                                    <div class="evento">🔸 Se cierra Actividad</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div>6</div>
+                                <div class="eventos-container">
+                                    <div class="evento">🔸 Vencimiento tarea</div>
+                                </div>
+                            </td>
+                            <td><div>7</div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>8</div>
+                                <div class="eventos-container">
+                                    <div class="evento">🔸 Se abre Actividad</div>
+                                </div>
+                            </td>
+                            <td><div>9</div></td>
+                            <td>
+                                <div>10</div>
+                                <div class="eventos-container">
+                                    <div class="evento">🔸 Entregar informe</div>
+                                </div>
+                            </td>
+                            <td><div>11</div></td>
+                            <td><div>12</div></td>
+                            <td>
+                                <div>13</div>
+                                <div class="eventos-container">
+                                    <div class="evento">🔸 Vencimiento</div>
+                                    <div class="evento">🔸 Se abre Actividad</div>
+                                </div>
+                            </td>
+                            <td><div>14</div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>15</div>
+                                <div class="eventos-container">
+                                    <div class="evento">🔸 Actividad 11 vence</div>
+                                </div>
+                            </td>
+                            <td><div>16</div></td>
+                            <td><div>17</div></td>
+                            <td><div>18</div></td>
+                            <td><div>19</div></td>
+                            <td>
+                                <div>20</div>
+                                <div class="eventos-container">
+                                    <div class="evento">🔸 Maqueta proyecto (vence)</div>
+                                </div>
+                            </td>
+                            <td><div>21</div></td>
+                        </tr>
+                        <tr>
+                            <td><div>22</div></td>
+                            <td><div>23</div></td>
+                            <td><div>24</div></td>
+                            <td><div>25</div></td>
+                            <td><div>26</div></td>
+                            <td><div>27</div></td>
+                            <td><div>28</div></td>
+                        </tr>
+                        <tr>
+                            <td><div>29</div></td>
+                            <td><div>30</div></td>
+                            <td><div>31</div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <hr>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <p class="footer-text">© 2025 - Prototipo académico accesible</p>
+    </footer>
+
+    <!-- BOTÓN MODO OSCURO -->
+    <button id="toggle-dark" aria-label="Cambiar modo oscuro">🌙</button>
+
+    <script>
+        // ===== MODO OSCURO CON ICONO =====
+        const toggleDark = document.getElementById('toggle-dark');
+        function actualizarIcono() {
+            if(document.body.classList.contains('dark-mode')) {
+                toggleDark.textContent = '☀️';
+            } else {
+                toggleDark.textContent = '🌙';
+            }
+        }
+        if(localStorage.getItem('dark-mode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+        actualizarIcono();
+        toggleDark.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode'));
+            actualizarIcono();
+        });
+
+        // ===== MENÚ HAMBURGUESA MÓVIL VERTICAL =====
+        const toggleMenu = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        toggleMenu.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            toggleMenu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Cursos – Prototipo WCAG 2.2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ENCABEZADO SUPERIOR -->
+    <header class="header">
+        <h1 class="header-title">Prototipo Front-End – WCAG 2.2</h1>
+
+        <!-- BOTÓN HAMBURGUESA SOLO MÓVIL -->
+        <button id="menu-toggle" aria-label="Abrir menú" class="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+
+        <!-- NAVEGACIÓN -->
+        <nav class="nav" aria-label="Navegación principal" id="mobile-menu">
+            <a class="nav-link" href="index.html">Bienvenida</a>
+            <a class="nav-link" href="login.html">Inicio de sesión</a>
+            <a class="nav-link" href="dashboard.html">Recordatorios</a>
+            <a class="nav-link" href="mis-cursos.html">Mis cursos</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <!-- SECCIÓN MIS CURSOS – TARJETAS -->
+    <main class="main">
+        <section class="section-cursos" aria-labelledby="titulo-cursos">
+            <h2 id="titulo-cursos" class="section-title">Mis cursos</h2>
+
+            <ul class="cursos-list">
+                <li class="curso-item">
+                    <strong>🔹 Matemáticas</strong>
+                    <ul class="sub-list">
+                        <li>Docente: Lic. Juan Pérez</li>
+                        <li>Horario: Lunes y Miércoles 10:00 - 12:00</li>
+                        <li>Estado: Activo</li>
+                    </ul>
+                </li>
+                <li class="curso-item">
+                    <strong>🔹 Español</strong>
+                    <ul class="sub-list">
+                        <li>Docente: Lic. María López</li>
+                        <li>Horario: Martes y Jueves 08:00 - 10:00</li>
+                        <li>Estado: Activo</li>
+                    </ul>
+                </li>
+                <li class="curso-item">
+                    <strong>🔹 Tecnología</strong>
+                    <ul class="sub-list">
+                        <li>Docente: Lic. Carlos Ruiz</li>
+                        <li>Horario: Viernes 14:00 - 16:00</li>
+                        <li>Estado: Activo</li>
+                    </ul>
+                </li>
+            </ul>
+
+        </section>
+    </main>
+
+    <hr>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <p class="footer-text">© 2025 - Prototipo académico accesible</p>
+    </footer>
+
+    <!-- BOTÓN MODO OSCURO -->
+    <button id="toggle-dark" aria-label="Cambiar modo oscuro">🌙</button>
+
+    <script>
+        // ===== MODO OSCURO CON ICONO =====
+        const toggleDark = document.getElementById('toggle-dark');
+        function actualizarIcono() {
+            toggleDark.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        }
+        if(localStorage.getItem('dark-mode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+        actualizarIcono();
+        toggleDark.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode'));
+            actualizarIcono();
+        });
+
+        // ===== MENÚ HAMBURGUESA MÓVIL VERTICAL =====
+        const toggleMenu = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        toggleMenu.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            toggleMenu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
+

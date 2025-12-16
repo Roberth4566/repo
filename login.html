@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login – Prototipo WCAG 2.2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ENCABEZADO SUPERIOR -->
+    <header class="header">
+        <h2 class="header-title">Prototipo Front-End – WCAG 2.2</h2>
+
+        <!-- BOTÓN HAMBURGUESA SOLO MÓVIL -->
+        <button id="menu-toggle" aria-label="Abrir menú" class="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+
+        <!-- NAVEGACIÓN -->
+        <nav class="nav" aria-label="Navegación principal" id="mobile-menu">
+            <a class="nav-link" href="index.html">Bienvenida</a>
+            <a class="nav-link" href="login.html">Inicio de sesión</a>
+            <a class="nav-link" href="dashboard.html">Recordatorios</a>
+            <a class="nav-link" href="mis-cursos.html">Mis cursos</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main">
+        <h1 class="main-title">Iniciar Sesión</h1>
+        <p class="main-description">Accede a tu cuenta para gestionar tus tareas y recordatorios.</p>
+
+        <!-- FORMULARIO ACCESIBLE MEJORADO -->
+        <form class="form-login" aria-label="Formulario de inicio de sesión">
+            <div class="form-group">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" class="input" required placeholder="usuario@gmail.com">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" class="input" required placeholder="Ingresa tu contraseña">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn">Iniciar sesión</button>
+            </div>
+        </form>
+    </main>
+
+    <hr>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <p class="footer-text">© 2025 - Prototipo académico accesible</p>
+    </footer>
+
+    <!-- BOTÓN MODO OSCURO -->
+    <button id="toggle-dark" aria-label="Cambiar modo oscuro">🌙</button>
+
+    <!-- JS -->
+    <script>
+        // ===== MODO OSCURO CON ICONO =====
+        const toggleDark = document.getElementById('toggle-dark');
+        function actualizarIcono() {
+            if(document.body.classList.contains('dark-mode')) {
+                toggleDark.textContent = '☀️';
+            } else {
+                toggleDark.textContent = '🌙';
+            }
+        }
+        if(localStorage.getItem('dark-mode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+        actualizarIcono();
+        toggleDark.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode'));
+            actualizarIcono();
+        });
+
+        // ===== MENÚ HAMBURGUESA MÓVIL VERTICAL =====
+        const toggleMenu = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        toggleMenu.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            toggleMenu.classList.toggle('active');
+        });
+
+        // ===== REDIRECCIÓN LOGIN =====
+        const formLogin = document.querySelector('form.form-login');
+        if(formLogin){
+            formLogin.addEventListener('submit', (e) => {
+                e.preventDefault();
+                window.location.href = 'dashboard.html';
+            });
+        }
+    </script>
+
+</body>
+</html>
+
