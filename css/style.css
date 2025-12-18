@@ -547,7 +547,7 @@ body.dark-mode .evento {
 
 /* =========================================
    FORZADO FINAL MÓVIL + FOTO CIRCULAR
-   (PEGAR AL FINAL DEL CSS)
+
 ========================================= */
 
 /* ===== SEPARACIÓN REAL DEL CALENDARIO EN MÓVIL ===== */
@@ -583,13 +583,16 @@ body.dark-mode .evento {
     box-shadow: none !important;
 }
 
-/* ===== FOTO DE BIENVENIDA CIRCULAR ===== */
+/* ===== FOTO DE BIENVENIDA CIRCULAR (PC Y MÓVIL) ===== */
 .figure-logo img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 1.5rem auto;
 }
+
 
 
 
