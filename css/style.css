@@ -573,6 +573,19 @@ body.dark-mode .evento {
     }
 }
 
+@media (max-width: 768px) {
+    .section-calendario .calendario-nav,
+    .section-calendario .cal-prev,
+    .section-calendario .cal-next,
+    .section-calendario .cal-center {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+}
+
+
+
 
 
 
