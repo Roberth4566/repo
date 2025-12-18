@@ -545,42 +545,35 @@ body.dark-mode .evento {
     z-index: 1000;
 }
 
-/* =========================================
-   FIX DEFINITIVO NAVEGACIÓN CALENDARIO – MÓVIL
-   PEGAR AL FINAL
-========================================= */
-
 @media (max-width: 768px) {
 
-    .calendario-nav {
+    .section-calendario .calendario-nav {
         display: flex !important;
-        justify-content: center !important;
+        justify-content: space-between !important;
         align-items: center !important;
-        gap: 1rem !important;
-        margin: 0.8rem 0 !important;
+        gap: 1.2rem !important;
+        width: 100% !important;
+        padding: 0.6rem 0 !important;
+    }
+
+    .section-calendario .cal-prev,
+    .section-calendario .cal-next {
+        min-width: 95px !important;
         text-align: center !important;
-        flex-wrap: nowrap !important;
-    }
-
-    .cal-prev,
-    .cal-next {
-        flex-shrink: 0 !important;
         font-size: 0.85rem !important;
-        padding: 0.2rem 0.4rem !important;
         white-space: nowrap !important;
+        flex-shrink: 0 !important;
     }
 
-    .cal-center {
-        flex-shrink: 0 !important;
-        margin: 0 0.8rem !important;
+    .section-calendario .cal-center {
         font-size: 0.95rem !important;
-        font-weight: bold;
         white-space: nowrap !important;
+        text-align: center !important;
+        flex-shrink: 0 !important;
     }
 }
-.calendario-nav {
-    border: 2px solid white;
-}
+
+
 
 
 
