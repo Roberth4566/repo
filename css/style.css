@@ -545,6 +545,53 @@ body.dark-mode .evento {
     z-index: 1000;
 }
 
+/* =========================================
+   FORZADO FINAL MÓVIL + FOTO CIRCULAR
+   (PEGAR AL FINAL DEL CSS)
+========================================= */
+
+/* ===== SEPARACIÓN REAL DEL CALENDARIO EN MÓVIL ===== */
+@media (max-width: 768px) {
+    .calendario-nav {
+        display: grid !important;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        column-gap: 1rem;
+        padding: 0.5rem 0;
+    }
+
+    .cal-prev,
+    .cal-next {
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+
+    .cal-center {
+        text-align: center;
+        font-size: 0.95rem;
+        white-space: nowrap;
+    }
+}
+
+/* ===== ELIMINAR CUALQUIER BORDE DE PRUEBA ===== */
+.calendario-nav,
+.cal-prev,
+.cal-next,
+.cal-center {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* ===== FOTO DE BIENVENIDA CIRCULAR ===== */
+.figure-logo img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
 
 
 
