@@ -40,8 +40,13 @@
         </figure>
 
         <p class="main-description">
-            Esta es una aplicación prototipo diseñada siguiendo las pautas de accesibilidad WCAG 2.2.
-            Aquí podrás gestionar tus tareas y recordatorios de manera simple y accesible.
+            <strong>Bienvenido/a a la aplicación.</strong><br>
+            Esta es una aplicación <strong>prototipo</strong> desarrollada siguiendo las pautas de accesibilidad
+            <strong>WCAG 2.2</strong>, orientada a la gestión de tareas y recordatorios de manera
+            <strong>simple, intuitiva e inclusiva</strong>.
+            El diseño prioriza la <strong>usabilidad</strong>, la <strong>navegación clara</strong>,
+            el <strong>contraste visual adecuado</strong> y la <strong>adaptación a distintos dispositivos</strong>,
+            garantizando una experiencia accesible para usuarios con diferentes capacidades.
         </p>
     </main>
 
@@ -62,35 +67,34 @@
 
         function actualizarIcono() {
             if(document.body.classList.contains('dark-mode')) {
-                toggleDark.textContent = '☀️'; // sol en modo oscuro
+                toggleDark.textContent = '☀️';
             } else {
-                toggleDark.textContent = '🌙'; // luna en modo claro
+                toggleDark.textContent = '🌙';
             }
         }
 
-        // Revisar modo oscuro guardado
         if(localStorage.getItem('dark-mode') === 'true') {
             document.body.classList.add('dark-mode');
         }
         actualizarIcono();
 
-        // Cambiar modo al hacer clic
         toggleDark.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode'));
             actualizarIcono();
         });
 
-        // ===== MENÚ HAMBURGUESA MÓVIL VERTICAL =====
+        // ===== MENÚ HAMBURGUESA MÓVIL =====
         const toggleMenu = document.getElementById('menu-toggle');
         const menu = document.getElementById('mobile-menu');
 
         toggleMenu.addEventListener('click', () => {
-            menu.classList.toggle('active'); // mostrar/ocultar menú
-            toggleMenu.classList.toggle('active'); // animación botón
+            menu.classList.toggle('active');
+            toggleMenu.classList.toggle('active');
         });
     </script>
 
 </body>
 </html>
+
 
