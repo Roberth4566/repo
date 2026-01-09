@@ -593,6 +593,54 @@ body.dark-mode .evento {
     margin: 1.5rem auto;
 }
 
+/* =========================================
+   MODO OSCURO FORZADO MÁS OSCURO (OVERRIDE FINAL)
+========================================= */
+
+body.dark-mode {
+    background-color: #0d0d0d !important;
+    color: #e6e6e6 !important;
+}
+
+body.dark-mode .header,
+body.dark-mode .footer,
+body.dark-mode .form-login,
+body.dark-mode .curso-item,
+body.dark-mode .tarea-item,
+body.dark-mode .nav,
+body.dark-mode .calendario,
+body.dark-mode .calendario th,
+body.dark-mode .calendario td {
+    background-color: #121212 !important;
+    color: #e6e6e6 !important;
+}
+
+body.dark-mode .input {
+    background-color: #1a1a1a !important;
+    border-color: #555 !important;
+    color: #e6e6e6 !important;
+}
+
+body.dark-mode .btn {
+    background-color: #222 !important;
+    color: #fff !important;
+}
+
+body.dark-mode .btn:hover {
+    background-color: #333 !important;
+}
+
+body.dark-mode .evento {
+    background-color: transparent !important;
+    color: #e6e6e6 !important;
+}
+
+/* Extra opcional: sombras más sutiles */
+body.dark-mode .curso-item,
+body.dark-mode .tarea-item {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.7) !important;
+}
+
 
 
 
